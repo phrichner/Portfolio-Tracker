@@ -1,0 +1,5 @@
+{
+  "name": "Portfolio Tracker",
+  "description": "A cryptocurrency portfolio tracker that uses Google Search Grounding to fetch real-time asset prices and calculate total portfolio value.",
+  "requestFramePermissions": []
+}
