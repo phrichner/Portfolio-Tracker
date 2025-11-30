@@ -1,5 +1,9 @@
 name: Build and deploy to GitHub Pages
 
+# Grant the workflow write access to contents so the deploy action can push the gh-pages branch
+permissions:
+  contents: write
+
 on:
   push:
     branches:
@@ -11,11 +15,16 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          # persist-credentials keeps the token available for later git push operations
+          persist-credentials: true
 
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: '18'
+          cache: 'npm'
 
       - name: Install dependencies
         run: npm ci
