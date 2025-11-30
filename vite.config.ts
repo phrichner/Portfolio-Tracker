@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  plugins: [react()],
-  // THIS IS CRITICAL: It tells the app it lives in a sub-folder named 'Portfolio-Tracker'
+  // Base public path when served from GitHub Pages for a project site:
   base: '/Portfolio-Tracker/',
+  plugins: [react()],
 });
